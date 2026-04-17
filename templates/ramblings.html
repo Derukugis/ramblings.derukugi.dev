@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+
+{% block css %}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.article {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  text-decoration: none;
+}
+
+.article a {
+  color: rgb(82, 82, 91);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  margin-right: 1ch;
+}
+
+.article a:hover {
+  color: black;
+}
+
+.date {
+  margin-left: auto;
+  color: rgb(113, 113, 122);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.article:hover > div:first-child {
+  text-decoration: underline;
+}
+
+
+{% endblock css %}
+
+{% block body %}
+<div>
+  {% for article in articles %}
+  <div class="article"><a href="/ramblings/{{ article.0 }}">{{ article.0 }}</a><span class="date">{{ article.1 }}</span></div>
+  {% endfor %}
+</div>
+{% endblock body %}

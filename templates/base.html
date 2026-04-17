@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ title }}</title>
+  <style type="text/css">
+html, body {
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-size: 1.05em;
+  font-family: "Helvetica", "Arial", sans-serif;
+  max-width: 32em;
+}
+
+a {
+  color: rgb(59, 130, 246);
+}
+
+.nav {
+  padding-top: 15px;
+}
+
+.nav a  {
+  color: rgb(113, 113, 122);
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Noto Sans Mono", "Consolas", monospace;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.nav a:hover {
+  color: black;
+  text-decoration: underline;
+}
+{% block css %}
+
+{% endblock css %}
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="/">home</a>
+    <a href="/ramblings">ramblings</a>
+    <a href="mailto:derukugi@tuta.io">email</a>
+  </div>
+  <div class="container">
+  {% block body %}
+  
+  {% endblock body %}
+  </div>
+</body>
+</html>
